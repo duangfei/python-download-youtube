@@ -4,7 +4,7 @@
 @Author: violeteve
 @Date: 2020-02-24 19:51:25
 @LastEditors: violeteve
-@LastEditTime: 2020-02-25 14:15:07
+@LastEditTime: 2020-02-25 15:05:55
 @FilePath: /python-download-youtube/datalist_download.py
 '''
 
@@ -52,6 +52,14 @@ def resolveJson(path):
                 try:
                     getItem =  GetItem()
                     getItem.download(re)
+                # except youtube_dl.utils.DownloadError as err:
+                #     print('下载异常，尝试重新下载！')
+                #     getItem =  GetItem()
+                #     getItem.download(re)
+                #     with open('1.txt', 'w') as file:  # .txt可以不自己新建,代码会自动新建
+                #         file.write (str(i+1))  # 写入
+                #         file.close()
+                #         print("下载成功！")
                 except youtube_dl.utils.DownloadError as err:
                     print('下载异常，跳过该视频！')
                     with open('1.txt', 'w') as file:  # .txt可以不自己新建,代码会自动新建
